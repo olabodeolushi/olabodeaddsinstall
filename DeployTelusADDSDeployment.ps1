@@ -76,7 +76,7 @@ Install-ADDSDomainController `
 -NoGlobalCatalog:$false `
 -CreateDnsDelegation:$false `
 -Credential $cred `
--SafeModeAdministratorPassword $SafeAdministratorPassword `
+-SafeModeAdministratorPassword $SecureSafeAdministratorPassword `
 -CriticalReplicationOnly:$false `
 -DatabasePath $NTDSpath `
 -DomainName $DomainName `
