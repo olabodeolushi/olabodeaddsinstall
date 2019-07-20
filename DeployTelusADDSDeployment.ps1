@@ -1,8 +1,8 @@
-﻿# ---------------------------------------------------
+# ---------------------------------------------------
 # Script: ADDCInstall.ps1
 # Version: 0.1
 # Author: Bode Olushi
-# Email: bode.olushi@newsignature.com
+# Email: olabodeolushi@outlook.com
 # Date: 17-07-2019
 # Description: This scripts installs Active Directory Domain Controller on a Server
 # --------------------------------------------------- 
@@ -20,10 +20,11 @@ param (
 #Convert passwords passed from Telus.ADDSDeployment.psm1 script to secure strings
 $SecureDomainPassword = (ConvertTo-SecureString $DomainPassword -AsPlainText -Force)
 $SecureSafeAdministratorPassword = (ConvertTo-SecureString $SafeAdministratorPassword -AsPlainText -Force)
+$DomainAdminAddress = $DomainAdmin + "@" +$DomainName
 
 
 #Create a new PSCredential object to hold the domain credentials
-$cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $SecureDomainPassword, $SecureSafeAdministratorPassword
+$cred = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $DomainAdminAddress, $SecureDomainPassword
 
 
 #Set Static Variables for Getting and Setting IP Address of the Server
