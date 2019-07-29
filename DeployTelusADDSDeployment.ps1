@@ -47,7 +47,7 @@ try{
         -NoGlobalCatalog:$false `
         -CreateDnsDelegation:$false `
         -Credential $creds `
-        -SafeModeAdministratorPassword $SafeAdministratorPassword `
+        -SafeModeAdministratorPassword "sdlf34@sdlk2" `
         -CriticalReplicationOnly:$false `
         -DatabasePath $NTDSpath `
         -DomainName $DomainName `
